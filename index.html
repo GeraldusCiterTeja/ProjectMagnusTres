@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Magnus Tres</title>
+
+    <link rel="icon" href="/image/favicon.png" type="image/png" />
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
+    />
+
+    <!-- css -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="image/magnustreslogo.png" alt="" />
+        <h1>Magnus Tres</h1>
+      </div>
+
+      <nav class="navbar" id="navbar">
+        <ul>
+          <li><a class="hide-sidebar" href="index.html"> Home </a></li>
+          <li><a class="hide-sidebar" href="product.html">Product</a></li>
+          <li><a class="hide-sidebar" href="about.html"> About Us </a></li>
+          <li><a class="hide-sidebar" href="#footer"> Contact Us</a></li>
+        </ul>
+      </nav>
+      <div class="navbar-extra">
+        <a href="#" class="cart" id="cart"><i class="bi bi-cart4"></i></a>
+        <a href="#" class="search" id="search-button"
+          ><i class="bi bi-search"></i
+        ></a>
+        <a href="#" id="list" class="list"><i class="bi bi-list"></i></a>
+      </div>
+
+      <!-- form search  -->
+      <div class="form-search">
+        <input
+          type="search"
+          id="search-box"
+          class="search-box"
+          placeholder="Search here..."
+        />
+        <label for="search-box"><i class="bi bi-search"></i></label>
+      </div>
+
+      <!-- cart -->
+      <div class="shoppingCart" id="shoppingCart">
+        <div class="cart-item">
+          <img src="/image/magnustreslogo.png" alt="Product" />
+          <div class="item-detail">
+            <h4>Product 1</h4>
+            <div class="item-price">Rp.99.000</div>
+          </div>
+          <div class="remove-item">
+            <i class="bi bi-trash"></i>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- home -->
+    <main id="home" class="home">
+      <section></section>
+      <article>
+        <h2>
+          Belanja sekarang dan nikmati gaya premium <br />dengan harga spesial.
+        </h2>
+      </article>
+      <a href="product.html"><button>Buy Now</button></a>
+    </main>
+    <!-- product -->
+    <main id="product_Category" class="productCategory">
+      <h3>Product Kategory</h3>
+      <div class="container">
+        <div class="productCard" id="productCard">
+          <img src="image/magnustreslogo.png" alt="" />
+          <h4>Pakaian Laki-Laki</h4>
+          <p>ini adalah Pakaianyang sangat nyaman</p>
+        </div>
+        <div class="productCard" id="productCard">
+          <img src="image/magnustreslogo.png" alt="" />
+          <h4>Pakaian Laki-Laki</h4>
+          <p>ini adalah Pakaianyang sangat nyaman</p>
+        </div>
+        <div class="productCard" id="productCard">
+          <img src="image/magnustreslogo.png" alt="" />
+          <h4>Pakaian Laki-Laki</h4>
+          <p>ini adalah Pakaianyang sangat nyaman</p>
+        </div>
+      </div>
+      <article></article>
+    </main>
+    <!-- testimoni -->
+    <main id="testimoni" class="testimoni">
+      <h3>Testimoni</h3>
+      <article>
+        <div class="testimoniCard">
+          <h4>Dika S.</h4>
+          <p>
+            "Saya sangat puas dengan kualitas pakaian dari Magnus Tres! Bahan
+            yang nyaman dan desain yang stylish membuat saya merasa percaya diri
+            setiap kali mengenakannya. Pengiriman juga cepat!"
+          </p>
+        </div>
+        <div class="testimoniCard">
+          <h4>ika S.</h4>
+          <p>
+            "Produk sepatu yang saya beli sangat nyaman dipakai! Tidak hanya
+            itu, pelayanan pelanggan juga sangat responsif saat saya memiliki
+            pertanyaan. Sangat merekomendasikan!"
+          </p>
+        </div>
+        <div class="testimoniCard">
+          <h4>Ika s</h4>
+          <p>
+            "Pakaian yang saya beli bagus, tetapi saya merasa proses
+            pengembalian barang perlu ditingkatkan. Namun, saya tetap akan
+            berbelanja lagi di Magnus Tres."
+          </p>
+        </div>
+      </article>
+    </main>
+
+    <!-- footer -->
+    <footer id="footer">
+      <div class="footer1">
+        <h4>Contact</h4>
+        <ul>
+          <li>Email: <a href="#">official.magnustres@gmail.com</a></li>
+          <li>Telepon: <a href="#">+62 812 3456 7890</a></li>
+          <li>
+            Alamat: <a href="#">Jl. Contoh No. 123, Jakarta, Indonesia</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer1">
+        <h4>Informasi</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="product.html">Product</a></li>
+          <li><a href="about.html">About Us</a></li>
+        </ul>
+      </div>
+      <div class="footer1">
+        <h4>&copy; Website Magnus Tres 2024</h4>
+        <ul class="sosialMedia">
+          <li>
+            <a href="#"><i class="bi bi-whatsapp"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="bi bi-tiktok"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+    <script src="index.js"></script>
+    <script src="main.js"></script>
+    <script src="cart.js"></script>
+  </body>
+</html>

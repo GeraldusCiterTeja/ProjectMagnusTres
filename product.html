@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Magnus Tres</title>
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
+    />
+
+    <!-- css -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="image/magnustreslogo.png" alt="" />
+        <h1>Magnus Tres</h1>
+      </div>
+
+      <nav class="navbar" id="navbar">
+        <ul>
+          <li><a class="hide-sidebar" href="index.html"> Home </a></li>
+          <li><a class="hide-sidebar" href="product.html">Product</a></li>
+          <li><a class="hide-sidebar" href="about.html"> About Us </a></li>
+          <li><a class="hide-sidebar" href="#footer"> Contact Us</a></li>
+        </ul>
+      </nav>
+      <div class="navbar-extra">
+        <a href="#" class="cart" id="cart"><i class="bi bi-cart4"></i></a>
+        <a href="#" class="search" id="search-button"
+          ><i class="bi bi-search"></i
+        ></a>
+        <a href="#" id="list" class="list"><i class="bi bi-list"></i></a>
+      </div>
+      <div class="form-search">
+        <input
+          type="search"
+          id="search-box"
+          class="search-box"
+          placeholder="Search here..."
+        />
+        <label for="search-box"><i class="bi bi-search"></i></label>
+      </div>
+
+      
+      <!-- cart -->
+      <div class="shoppingCart" id="shoppingCart">
+        <div class="cart-item">
+          <img src="/image/magnustreslogo.png" alt="Product" />
+          <div class="item-detail">
+            <h4>starry night</h4>
+            <div class="item-price">Rp.99.000</div>
+          </div>
+          <div class="remove-item" id="remove-item">
+            <i class="bi bi-trash"></i>
+          </div>
+        </div>
+        <div class="cart-item">
+          <img src="/image/magnustreslogo.png" alt="Product" />
+          <div class="item-detail">
+            <h4>Product 1</h4>
+            <div class="item-price">Rp.99.000</div>
+          </div>
+          <div class="remove-item">
+            <i class="bi bi-trash"></i>
+          </div>
+        </div>
+        <div class="cart-item">
+          <img src="/image/magnustreslogo.png" alt="Product" />
+          <div class="item-detail">
+            <h4>Product 1</h4>
+            <div class="item-price">Rp.99.000</div>
+          </div>
+          <div class="remove-item">
+            <i class="bi bi-trash"></i>
+          </div>
+        </div>
+        <div class="cart-item">
+          <img src="/image/magnustreslogo.png" alt="Product" />
+          <div class="item-detail">
+            <h4>Product 1</h4>
+            <div class="item-price">Rp.99.000</div>
+          </div>
+          <div class="remove-item">
+            <i class="bi bi-trash"></i>
+          </div>
+        </div>
+      </div>
+    </header>
+    </header>
+    <!-- product -->
+    <main class="productAll">
+      <h3>Product</h3>
+      <div class="container">
+        <div id="cardProduct" class="cardProduct">
+          <div class="infoProduct" id="infoProduct">
+            <img src="image/product/starry-night.jpg" alt="product" />
+            <h4>starry night</h4>
+            <p>Rp.150.000</p>
+            <p>limited edition only 50pc</p>
+            <button class="buyNow" id="buyNow">Buy Now</button>
+          </div>
+        </div>
+        <div id="cardProduct1" class="cardProduct1">
+          <div class="infoProduct" id="infoProduct">
+            <img src="image/product/starry-night11.jpg" alt="product" />
+            <h4>Pakaian Laki-Laki panjang dan elegan 222</h4>
+            <p>Rp.99.000</p>
+            <button class="buyNow" id="buyNow1">Buy Now</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- footer -->
+    <footer id="footer">
+      <div class="footer1">
+        <h4>Contact</h4>
+        <ul>
+          <li>Email: <a href="#">official.magnustres@gmail.com</a></li>
+          <li>Telepon: <a href="#">+62 812 3456 7890</a></li>
+          <li>
+            Alamat: <a href="#">Jl. Contoh No. 123, Jakarta, Indonesia</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer1">
+        <h4>Informasi</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="product.html">Product</a></li>
+          <li><a href="about.html">About Us</a></li>
+        </ul>
+      </div>
+      <div class="footer1">
+        <h4>&copy; Website Magnus Tres 2024</h4>
+        <ul class="sosialMedia">
+          <li>
+            <a href="#"><i class="bi bi-whatsapp"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="bi bi-tiktok"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+
+    <div class="detailProduct" id="itemDetailProduct">
+      <div class="productContainer">
+        <a href="#" class="deleteDetail">&times;</a>
+        <div class="cart-item">
+          <img src="/image/product/starry-night11.jpg" alt="Product" />
+          <div class="item-detail">
+            <h4>starry night</h4>
+            <p><span>✨Koleksi “Starry Night”✨</span>
+              <br>
+              Bersinar layaknya bintang di malam yang penuh cahaya! Koleksi terbaru kami menghadirkan baju bertema bintang, sempurna untuk kamu yang ingin tampil beda dan mempesona. 🌟
+              <br>
+              <!-- <br> -->
+              <span> 💫 Detail Baju:</span>
+              <br>
+              Desain eksklusif dengan sentuhan motif bintang.
+              Nyaman dan stylish dengan bahan premium Cotton Combed 24s, cocok untuk berbagai kesempatan.
+              Bahan premium yang ringan dan berkualitas.</p>
+            <div class="item-price">Rp.150.000</div>
+            <p>limited edition only 50pcs</p>
+            <div class="cartIcon"><a href="#"><i class="bi bi-cart4"></i> Add to Cart</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
