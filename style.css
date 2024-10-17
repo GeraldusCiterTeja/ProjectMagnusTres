@@ -339,7 +339,7 @@ footer h4 {
   font-size: 2rem;
 }
 
-/* cart Product */
+/* cart Product  */
 .cardProduct1 {
   display: flex;
   gap: 1rem;
@@ -503,7 +503,7 @@ footer h4 {
 }
 
 .detailProduct img{
-  height: 20rem;
+  height: 16rem;
 }
 
 
