@@ -63,10 +63,12 @@ const imgB = document.querySelector('.imgB');
 
 imgD.addEventListener('click', (e)=>{
   imgB.classList.toggle('active')
+  e.preventDefault();
   
 })
 
 imgB.addEventListener('click', (e)=>{
   imgB.classList.toggle('active')
+  e.preventDefault();
   
 })
