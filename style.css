@@ -13,6 +13,7 @@ body {
   background-color: #fff;
   font-size: 1rem;
   overflow-x: hidden;
+  width: 100%;
 }
 
 /* Setting */
@@ -218,8 +219,7 @@ h3 {
 
 .home section{
   display: flex;
-  flex-direction: column;
-  padding: 2rem;
+  padding: 1rem;
   gap: 0.5rem;
   justify-content: center;
   align-items: center;
@@ -230,6 +230,7 @@ h3 {
   border: 1px solid black;
   background-color: #333;
   color: #fff;
+  overflow: hidden;
 }
 
 .home h1{
@@ -627,6 +628,7 @@ footer h4 {
     transition: 0.3s;
     border: 1px solid black;
     width: 30rem;
+    overflow: hidden;
   }
 
   .navbar.active {
@@ -647,6 +649,8 @@ footer h4 {
   .navbar a:hover {
     color: #ffc300;
   }
+
+  .home 
 
   /* form-search */
   header .form-search {
@@ -683,12 +687,7 @@ footer h4 {
     font-size: 6rem;
   }
   .navbar {
-    position: absolute;
     top: 6.4rem;
-    height: 100vh;
-    right: -100%;
-    transition: 0.3s;
-    border: 1px solid black;
     width: 20rem;
   }
 
