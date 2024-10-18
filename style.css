@@ -5,6 +5,7 @@
   outline: none;
   border: none;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
