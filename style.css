@@ -6,6 +6,7 @@
   border: none;
   scroll-behavior: smooth;
   overflow-x: hidden;
+  max-width: 100vw;
 }
 
 body {
@@ -622,17 +623,18 @@ footer h4 {
   .navbar {
     position: absolute;
     top: 6rem;
-    height: 100%;
-    right: -100%;
+    height: 100vh;
+    right: 0;
     background-color: #fff;
     transition: 0.3s;
     border: 1px solid black;
     width: 30rem;
-    overflow: hidden;
+    /* overflow: hidden; */
+    transform: translateX(100%);
   }
 
   .navbar.active {
-    right: 0;
+    transform: translateX(0);
   }
 
   .navbar ul {
