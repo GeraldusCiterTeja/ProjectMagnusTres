@@ -57,9 +57,16 @@ document.addEventListener("click", (e) => {
   }
 });
 
-// detailProduct
-// const detailProduct = document.querySelectorAll("detailProduct");
+// img 
+const imgD = document.querySelector('.imgD');
+const imgB = document.querySelector('.imgB');
 
-// document.querySelectorAll("cartIcon").click = ()=>{
-//   alert('Bisa')
-// }
+imgD.addEventListener('click', (e)=>{
+  imgB.classList.toggle('active')
+  
+})
+
+imgB.addEventListener('click', (e)=>{
+  imgB.classList.toggle('active')
+  
+})
