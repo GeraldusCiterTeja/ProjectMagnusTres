@@ -14,6 +14,13 @@ list.addEventListener("click", () => {
   });
 });
 
+// click di luar List
+document.addEventListener("click", (e) => {
+  if (!list.contains(e.target) && !navbar.contains(e.target)) {
+    navbar.classList.remove("active");
+  }
+});
+
 // Shoppingcart
 const shoppingCart = document.getElementById("shoppingCart");
 const cart = document.getElementById("cart");
@@ -22,6 +29,13 @@ cart.addEventListener("click", (e) => {
   shoppingCart.classList.toggle("active");
   e.preventDefault();
 });
+
+// click di luar shopping Cart
+document.addEventListener('click', (e)=>{
+  if (!cart.contains(e.target) && !shoppingCart.contains(e.target)) {
+    shoppingCart.classList.remove("active");
+  }
+})
 
 // detail
 const buy = document.querySelectorAll('.buyNow');
@@ -45,16 +59,6 @@ window.onclick = (e) =>{
   }
 }
 
-// click di luar Element
-document.addEventListener("click", (e) => {
-  if (!list.contains(e.target) && !navbar.contains(e.target)) {
-    navbar.classList.remove("active");
-  }
-
-  if (!cart.contains(e.target) && !shoppingCart.contains(e.target)) {
-    shoppingCart.classList.remove("active");
-  }
-});
 
 // img 
 // const imgD = document.querySelector('.imgD');

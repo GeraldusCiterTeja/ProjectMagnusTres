@@ -150,7 +150,7 @@ header .form-search label {
   padding-right: 1rem;
 }
 
-/* ShoppingCart */
+/* Shopping Cart */
 header .shoppingCart {
   background-color: #fff;
   position: absolute;
@@ -609,7 +609,7 @@ footer h4 {
 
   .navbar {
     position: absolute;
-    top: 5.6rem;
+    top: 5.3rem;
     height: 100vh;
     right: 0;
     background-color: #fff;
@@ -654,16 +654,16 @@ footer h4 {
 
   /* form-search */
   header .form-search {
-    top: 5.6rem;
+    top: 5.3rem;
     height: 4rem;
     width: 35rem;
   }
 
   /* ShoppingCart */
   header .shoppingCart {
+    top: 5.3rem;
     height: auto;
     width: 80%;
-    top: 5.6rem;
     left: 10%;
   }
 
@@ -736,7 +736,7 @@ footer h4 {
   }
 
   .navbar {
-    top: 5.6rem;
+    top: 5.2rem;
     width: 20rem;
   }
 
@@ -761,20 +761,21 @@ footer h4 {
 
   /* form-search */
   header .form-search {
-    top: 6rem;
+    top: 5.2rem;
     height: 4rem;
-    width: 30rem;
-    right: 4%;
-    left: 4%;
+    width: 25rem;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
   }
 
   /* shoppingCart */
   header .shoppingCart {
+    top: 5.2rem;
     width: 90%;
     left: 5%;
     height: auto;
     right: 5%;
-    top: 6rem;
   }
 
   /* footer */
@@ -789,8 +790,9 @@ footer h4 {
 
   .detailProduct .productContainer {
     width: 90%;
-    height: 100%;
-    margin: 5% auto;
+    height: auto;
+    margin: 20% auto;
+    padding: 1rem 0;
   }
 
   /* about */
