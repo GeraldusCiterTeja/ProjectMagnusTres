@@ -100,7 +100,7 @@ checkoutButton.addEventListener('click', function(e){
   const objData = Object.fromEntries(data);
   console.log(objData)
   const message = formatMessage(objData);
-  window.open('http://wa.me/6285752735600?text=' + encodeURIComponent(message));
+  window.open('http://wa.me/6282154776799?text=' + encodeURIComponent(message));
 })
 
 // Format Pesan Whatsapp
