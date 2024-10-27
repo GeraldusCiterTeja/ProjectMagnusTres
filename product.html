@@ -23,9 +23,17 @@
 
     <!-- css -->
     <link rel="stylesheet" href="style.css" />
+
+    <!-- Alpine.js -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+
+    <script src="src/app.js" async></script>
   </head>
   <body>
-    <header>
+    <header x-data>
       <div class="logo">
         <img src="image/magnustreslogo.png" alt="" />
         <h1>Magnus Tres</h1>
@@ -40,7 +48,14 @@
         </ul>
       </nav>
       <div class="navbar-extra">
-        <a href="#" class="cart" id="cart"><i class="bi bi-cart4"></i></a>
+        <a href="#" class="cart" id="cart">
+          <i class="bi bi-cart4"></i>
+          <span
+            class="quantity-badge"
+            x-show="$store.cart.quantity"
+            x-text="$store.cart.quantity"
+          ></span>
+        </a>
         <a href="#" class="search" id="search-button"
           ><i class="bi bi-search"></i
         ></a>
@@ -59,51 +74,94 @@
       </div>
 
       <!-- cart -->
-      <div class="shoppingCart" id="shoppingCart">
-        <div class="cart-item">
-          <img src="image/magnustreslogo.png" alt="Product" />
-          <div class="item-detail">
-            <h4>starry night</h4>
-            <div class="item-price">Rp.99.000</div>
+      <div class="shoppingCart" id="shoppingCart" x-data>
+        <template x-for="(item, index) in $store.cart.items" x-keys="index">
+          <div class="cart-item">
+            <img :src="`image/product/${item.img}`" :alt="`item.name`" />
+            <div class="item-detail">
+              <h4 x-text="item.name"></h4>
+              <div class="item-price">
+                <span x-text="rupiah(item.price)"></span> &times;
+                <button id="remove" @click="$store.cart.remove(item.id)">
+                  &minus;
+                </button>
+                <span x-text="item.quantity"></span>
+                <button id="add" @click="$store.cart.add(item)">&plus;</button>
+                &equals;
+                <span x-text="rupiah(item.total)"></span>
+              </div>
+            </div>
           </div>
-          <div class="remove-item" id="remove-item">
-            <i class="bi bi-trash"></i>
-          </div>
-        </div>
-        <div class="cart-item">
-          <img src="image/magnustreslogo.png" alt="Product" />
-          <div class="item-detail">
-            <h4>Product 1</h4>
-            <div class="item-price">Rp.99.000</div>
-          </div>
-          <div class="remove-item">
-            <i class="bi bi-trash"></i>
-          </div>
+        </template>
+        <h5 x-show="!$store.cart.items.length">Cart is Empty</h5>
+        <h5 x-show="$store.cart.items.length">
+          Total : <span x-text="rupiah($store.cart.total)"></span>
+        </h5>
+        <div class="form-container" x-show="$store.cart.items.length">
+          <form action="" id="checkoutForm">
+            <input
+              type="hidden"
+              name="items"
+              x-model="JSON.stringify($store.cart.items)"
+            />
+            <input type="hidden" name="total" x-model="$store.cart.total" />
+            <h6>customer Detail</h6>
+            <label for="name">
+              <span>name</span>
+              <input type="text" name="name" id="name" />
+            </label>
+
+            <label for="email">
+              <span>Email</span>
+              <input type="email" name="email" id="email" />
+            </label>
+
+            <label for="address">
+              <span>Address</span>
+              <input type="text" name="address" id="address" />
+            </label>
+
+            <label for="phone">
+              <span>Phone</span>
+              <input type="number" name="phone" id="phone" autocomplete="off" />
+            </label>
+
+            <button
+              class="checkout-button disabled"
+              type="submit"
+              id="checkout-button"
+              value="checkout"
+            >
+              Checkout
+            </button>
+          </form>
         </div>
       </div>
     </header>
+
     <!-- product -->
-    <main class="productAll">
+    <main class="productAll" x-data="products">
       <h3>Product</h3>
       <div class="container">
-        <div id="cardProduct" class="cardProduct">
-          <div class="infoProduct" id="infoProduct">
-            <img src="image/product/starry-night.jpg" alt="product" />
-            <h4>starry night</h4>
-            <p>Rp.150.000</p>
-            <p>limited edition only 50pc</p>
-            <button class="buyNow" id="buyNow">Buy Now</button>
+        <template x-for="(item, index) in items" x-key="index">
+          <div id="cardProduct" class="cardProduct">
+            <div class="infoProduct" id="infoProduct">
+              <img :src="`image/product/${item.img}`" :alt="item.name" />
+              <h4 x-text="item.name"></h4>
+              <p x-text="rupiah(item.price)"></p>
+              <p>limited edition only 50pc</p>
+              <button
+                @click.prevent="$store.cart.add(item)"
+                class="buyNow"
+                id="buyNow"
+              >
+                Buy Now
+              </button>
+              <!-- <button><i class="bi bi-cart4"></i></button> -->
+            </div>
           </div>
-        </div>
-        <div id="cardProduct" class="cardProduct">
-          <div class="infoProduct" id="infoProduct">
-            <img src="image/product/starry-night.jpg" alt="product" />
-            <h4>starry night</h4>
-            <p>Rp.150.000</p>
-            <p>limited edition only 50pc</p>
-            <button class="buyNow" id="buyNow">Buy Now</button>
-          </div>
-        </div>
+        </template>
+        <!-- @click.prevent="$store.cart.add(item) -->
       </div>
     </main>
 
@@ -114,9 +172,9 @@
         <ul>
           <li>Email: <a href="#">official.magnustres@gmail.com</a></li>
           <li>Telepon: <a href="#">+62 812 3456 7890</a></li>
-          <li>
+          <!-- <li>
             Alamat: <a href="#">Jl. Contoh No. 123, Jakarta, Indonesia</a>
-          </li>
+          </li> -->
         </ul>
       </div>
       <div class="footer1">
@@ -131,7 +189,11 @@
         <h4>&copy; Website Magnus Tres 2024</h4>
         <ul class="sosialMedia">
           <li>
-            <a href="#"><i class="bi bi-whatsapp"></i></a>
+            <a
+              href="https://wa.me/6285752735600?text=Hallo kak%20Saya Ingin bertanya tentang produk di Magnus Tres"
+              target="_blank"
+              ><i class="bi bi-whatsapp"></i
+            ></a>
           </li>
           <li>
             <a href="#"><i class="bi bi-tiktok"></i></a>

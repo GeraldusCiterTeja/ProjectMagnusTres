@@ -43,6 +43,7 @@ const detailProduct = document.querySelector(".detailProduct");
 
 buy.forEach(button => {
   button.onclick = (e)=>{
+    alert("Berhasil")
     detailProduct.style.display = 'flex';
     e.preventdefault()
   }
@@ -50,6 +51,7 @@ buy.forEach(button => {
 
 document.querySelector('.deleteDetail').onclick = (e)=>{
   detailProduct.style.display = 'none';
+  e.preventDefault()
 }
 
 // click di luar detail 
@@ -58,21 +60,3 @@ window.onclick = (e) =>{
     detailProduct.style.display = 'none';
   }
 }
-
-
-// img 
-// const imgD = document.querySelector('.imgD');
-// const imgB = document.querySelector('.imgB');
-
-// imgD.addEventListener('click', (e)=>{
-//   imgB.classList.toggle('active')
-//   e.preventDefault();
-  
-// })
-
-// imgB.addEventListener('click', (e)=>{
-//   imgB.classList.toggle('active')
-//   e.preventDefault();
-  
-// })
-
