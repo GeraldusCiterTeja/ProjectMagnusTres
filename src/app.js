@@ -18,14 +18,14 @@ document.addEventListener("alpine:init", () => {
 
     ],
     
-    // Konversi ke rupiah
-    rupiah (number){
-      return new Intl.NumberFormat("id-ID", {
-        style: "currency",
-        currency: "IDR",
-        minimumFractionDigits: 0,
-      }).format(number);
-    },
+    // // Konversi ke rupiah  
+    // rupiah (number){
+    //   return new Intl.NumberFormat("id-ID", {
+    //     style: "currency",
+    //     currency: "IDR",
+    //     minimumFractionDigits: 0,
+    //   }).format(number);
+    // },
   }));
 
   Alpine.store("cart", {
@@ -35,7 +35,8 @@ document.addEventListener("alpine:init", () => {
     add(newItem) {
       // Cek apakah ada barang di cart
       const cartItem = this.items.find((item) => item.id === newItem.id);
-      
+
+      // Jika belum ada 
       if (!cartItem) {
         this.items.push({ ...newItem, quantity: 1, total: newItem.price });
         this.quantity++;
@@ -76,8 +77,7 @@ document.addEventListener("alpine:init", () => {
         });
       } else if(cartItem.quantity === 1){
         // Jika barangmya sisa 1
-        this.items = this.items.filter((item) => item.id !== id)
-
+        this.items = this.items.filter((item) => item.id !== id);
         this.quantity --;
         this.total -= cartItem.price;
       }
@@ -103,18 +103,18 @@ form.addEventListener('keyup', function(){
     checkoutButton.classList.remove('disabled');
 })
 
-// Kirim data ketika tombol button di click
+// // Kirim data ketika tombol button di click
 checkoutButton.addEventListener('click', function(e){
   e.preventDefault();
   const formData = new FormData(form);
   const data = new URLSearchParams(formData);
   const objData = Object.fromEntries(data);
-  // console.log(objData)
+  console.log(objData)
   const message = formatMessage(objData);
   window.open('http://wa.me/6282154776799?text=' + encodeURIComponent(message));
 })
 
-// Format Pesan Whatsapp
+// // Format Pesan Whatsapp
 const formatMessage = (obj) =>{
   return `Data Customer
     Nama: ${obj.name}

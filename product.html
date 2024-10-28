@@ -29,8 +29,6 @@
       defer
       src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
     ></script>
-
-    <script src="src/app.js" async></script>
   </head>
   <body>
     <header x-data>
@@ -81,7 +79,7 @@
             <div class="item-detail">
               <h4 x-text="item.name"></h4>
               <div class="item-price">
-                <span x-text="rupiah(item.price)"></span> &times;
+                <span x-text="rupiah(item.price)"></span> &times; 
                 <button id="remove" @click="$store.cart.remove(item.id)">
                   &minus;
                 </button>
@@ -243,6 +241,7 @@
     </div>
 
     <script src="main.js"></script>
-    <script src="index.js"></script>
+    <script src="index.js"></script>  
+    <script src="src/app.js"></script>
   </body>
 </html>
