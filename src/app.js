@@ -1,3 +1,5 @@
+
+
 document.addEventListener("alpine:init", () => {
   Alpine.data("products", () => ({
     items: [
@@ -15,6 +17,15 @@ document.addEventListener("alpine:init", () => {
       },
 
     ],
+    
+    // Konversi ke rupiah
+    rupiah (number){
+      return new Intl.NumberFormat("id-ID", {
+        style: "currency",
+        currency: "IDR",
+        minimumFractionDigits: 0,
+      }).format(number);
+    },
   }));
 
   Alpine.store("cart", {
@@ -24,7 +35,7 @@ document.addEventListener("alpine:init", () => {
     add(newItem) {
       // Cek apakah ada barang di cart
       const cartItem = this.items.find((item) => item.id === newItem.id);
-
+      
       if (!cartItem) {
         this.items.push({ ...newItem, quantity: 1, total: newItem.price });
         this.quantity++;
@@ -98,7 +109,7 @@ checkoutButton.addEventListener('click', function(e){
   const formData = new FormData(form);
   const data = new URLSearchParams(formData);
   const objData = Object.fromEntries(data);
-  console.log(objData)
+  // console.log(objData)
   const message = formatMessage(objData);
   window.open('http://wa.me/6282154776799?text=' + encodeURIComponent(message));
 })
@@ -124,4 +135,4 @@ const rupiah = (number) => {
     currency: "IDR",
     minimumFractionDigits: 0,
   }).format(number);
-};
+}
